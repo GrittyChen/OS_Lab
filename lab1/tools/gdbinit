@@ -1,0 +1,9 @@
+file bin/kernel
+target remote :1234
+break kern_init
+continue
+set architecture i8086
+break *0x7c00
+continue
+x /10i $pc
+set architecture i386
