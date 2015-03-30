@@ -296,7 +296,7 @@ print_stackframe(void) {
 	for(i=0; i<STACKFRAME_DEPTH && ebp!=0; i++)
 	{
 		//print ebp and eip;
-		cprintf("ebp:0x%80x eip:0x%80x ", ebp, eip);
+		cprintf("ebp:0x%08x eip:0x%08x", ebp, eip);
 		uint32_t *args = (uint32_t *)ebp + 2;
 		//print arguments;
 		cprintf(" args:");
