@@ -151,10 +151,10 @@ trap_dispatch(struct trapframe *tf) {
     switch (tf->tf_trapno) {
     case IRQ_OFFSET + IRQ_TIMER:
     	ticks++;//in clock.h(extern volatile size_t ticks;);
-    	if(ticks == TICK_NUM)
+    	if(ticks % TICK_NUM == 0)
     	{
     		print_ticks();//打印"100	ticks";
-    		ticks = 0;//时钟清零;
+    		//ticks = 0;//时钟清零;
     	}
         /* LAB1 YOUR CODE : STEP 3 */
         /* handle the timer interrupt */
