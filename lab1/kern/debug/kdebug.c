@@ -301,7 +301,7 @@ print_stackframe(void) {
 		//print arguments;
 		cprintf(" args:");
 		for(j=0; j<4; j++)
-			cprintf("0x%80x ", args[j]);
+			cprintf("0x%08x ", args[j]);
 		cprintf("\n");
 		//call print_debuginfo(eip-1)
 		print_debuginfo(eip-1);
